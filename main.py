@@ -15,7 +15,7 @@ if place:
         filtered_data = get_data(place, days)
 
         if option == "Temperature":
-            temps = [temp["main"]["temp"]/10 for temp in filtered_data]/10
+            temps = [temp["main"]["temp"]/10 for temp in filtered_data]
             dates = [date["dt_txt"] for date in filtered_data]
             figure = px.line(x=dates, y=temps, labels={"x":"Date","y":"Temperature(C)"})
             st.plotly_chart(figure)
